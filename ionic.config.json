@@ -1,0 +1,7 @@
+{
+  "name": "formativa 2",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
