@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>ServiceMecanicAPP</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">ServiceMecanicAPP</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container" class="cuerpo_page">
+    <ion-card>
+      <ion-card-title>
+        <h3>Agregar Comentario</h3>
+      </ion-card-title>
+
+      <form (submit)="onSubmit()">
+        <ion-item>
+          <ion-label position="floating">Nombre del Cliente</ion-label>
+          <ion-input [(ngModel)]="cliente.nombre" name="nombre" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Servicio</ion-label>
+          <ion-input [(ngModel)]="cliente.servicio" name="servicio" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Descripción</ion-label>
+          <ion-textarea [(ngModel)]="cliente.descripcion" name="descripcion" required></ion-textarea>
+        </ion-item>
+        <ion-button expand="full" type="submit">Guardar Comentario</ion-button>
+      </form>
+    </ion-card>
+  </div>
+</ion-content>
+

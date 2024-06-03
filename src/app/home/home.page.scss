@@ -25,3 +25,41 @@
 #container a {
   text-decoration: none;
 }
+
+ion-card{
+  margin-top: 20%
+}
+
+ion-card{
+  background-color: transparent;
+}
+
+ion-tab-button{
+  background-color: rgb(255, 0, 0);
+}
+
+.logo {
+  max-width: 50%;
+  height: auto;
+}
+
+/* Animación */
+.animated-image-rotate {
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 150px;
+    height: 150px;
+    animation: rotate 4s linear infinite;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
