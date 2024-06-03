@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-tabs2',
@@ -12,13 +13,23 @@ export class Tabs2Page {
     telefono: ''
   }
 
-  constructor() { }
+  nombre: string='';
+  ubicacion: string='';
+  telefono: string='';
+
+  constructor(private activateroute:ActivatedRoute, private router:Router) { }
 
   onSubmit() {
     console.log('Servicio:', this.servicio);
   }
 
   ngOnInit() {
+  }
+
+  limpiar() {
+    this.servicio.nombre = '';
+    this.servicio.ubicacion = '';
+    this.servicio.telefono = '';
   }
 
 }
