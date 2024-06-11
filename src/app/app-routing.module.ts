@@ -12,12 +12,53 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'login',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
+  {
+    path: 'tabs/home',
+    redirectTo: 'tabs/home',
+    pathMatch: 'full'
+  },
+  {
+    path: 'tabs',
+    redirectTo: 'tabs',
+    pathMatch: 'full'
+  },
+  {
+    path: 'tabs/tabs1',
+    redirectTo: 'tabs/tabs1',
+    pathMatch: 'full'
+  },
+  {
+    path: 'tabs/tabs2',
+    redirectTo: 'tabs/tabs2',
+    pathMatch: 'full'
+  },
+  {
+    path: 'tabs/tabs3',
+    redirectTo: 'tabs/tabs3',
+    pathMatch: 'full'
+  },
+
+  {
+    path: '**',
+    redirectTo: 'e404',
+    pathMatch: 'full'
+  },
+
+  {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
     path: 'tabs',
     loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
+  },
+  {
+    path: 'e404',
+    loadChildren: () => import('./e404/e404.module').then( m => m.E404PageModule)
   },
   /*{
     path: 'tabs1',
