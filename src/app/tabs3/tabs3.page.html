@@ -31,6 +31,9 @@
           <ion-textarea [(ngModel)]="cliente.descripcion" name="descripcion" required></ion-textarea>
         </ion-item>
         <ion-button expand="full" type="submit">Guardar Comentario</ion-button>
+        <ion-button (click)="goToFinancialPage()">Consumir API</ion-button>
+        <ion-button (click)="goToCameraPage()">Abrir Cámara</ion-button>
+        <ion-button (click)="viewLocation()">Ver Maps</ion-button>
       </form>
     </ion-card>
   </div>

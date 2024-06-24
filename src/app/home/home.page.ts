@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { DbService } from '../db.service';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +20,11 @@ export class HomePage {
 
   usuarioRecibidoPersistente: any='';
 
-  constructor(private activateroute:ActivatedRoute, private router:Router, private alertController: AlertController) {
+  constructor(private activateroute:ActivatedRoute, 
+              private router:Router, 
+              private alertController: AlertController,
+              private dbService: DbService) {
+
     this.activateroute.queryParams.subscribe(params =>{
       if(this.router.getCurrentNavigation()?.extras?.state){
 
@@ -76,4 +81,17 @@ export class HomePage {
     localStorage.clear();
   }
 
+  async cerrarSesion() {
+    try {
+      // Llamar al método del servicio para borrar los datos de la tabla "usuarios"
+      await this.dbService.clearUsuarios();
+      console.log('Datos de la tabla usuarios borrados');
+
+      // Redirigir a la página de login
+      this.router.navigate(['/login']);
+    } catch (error) {
+      console.error('Error cerrando sesión:', error);
+    }
+  }
+  
 }

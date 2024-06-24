@@ -41,6 +41,26 @@ const routes: Routes = [
     redirectTo: 'tabs/tabs3',
     pathMatch: 'full'
   },
+  {
+    path: 'financial',
+    redirectTo: 'financial',
+    pathMatch: 'full'
+  },
+  {
+    path: 'camera',
+    redirectTo: 'camera',
+    pathMatch: 'full'
+  },
+  {
+    path: 'map',
+    redirectTo: 'map',
+    pathMatch: 'full'
+  },
+  {
+    path: 'registro',
+    redirectTo: 'registro',
+    pathMatch: 'full'
+  },
 
   {
     path: '**',
@@ -59,6 +79,22 @@ const routes: Routes = [
   {
     path: 'e404',
     loadChildren: () => import('./e404/e404.module').then( m => m.E404PageModule)
+  },
+  {
+    path: 'financial',
+    loadChildren: () => import('./financial/financial.module').then( m => m.FinancialPageModule)
+  },
+  {
+    path: 'camera',
+    loadChildren: () => import('./camera/camera.module').then( m => m.CameraPageModule)
+  },
+  {
+    path: 'map',
+    loadChildren: () => import('./map/map.module').then( m => m.MapPageModule)
+  },
+  {
+    path: 'registro',
+    loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
   },
   /*{
     path: 'tabs1',
