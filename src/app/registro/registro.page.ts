@@ -51,7 +51,7 @@ export class RegistroPage implements OnInit {
   }
 
   guardarDatos() {
-    this.dbService.insertUsuario(this.nombre, this.apellido, this.usuario, this.password, this.selectedOption, this.selectedDate)
+    this.dbService.insertUsuario(this.nombre, this.apellido, this.usuario, this.password, this.selectedOption)
     .then(() => {
       this.presentAlert('Datos guardados exitosamente');
     })

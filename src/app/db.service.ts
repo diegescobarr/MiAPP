@@ -38,30 +38,23 @@ export class DbService {
     this.db.executeSql(
       `CREATE TABLE IF NOT EXISTS usuarios (
         id INTEGER PRIMARY KEY AUTOINCREMENT, 
-        nombre TEXT, apellido TEXT, 
+        nombre TEXT, 
+        apellido TEXT, 
         usuario TEXT, 
         password TEXT, 
-        nivel_de_estudios TEXT,
-        fecha_de_nacimiento)`, [])
+        nivel_de_estudios TEXT)`, [])
       .then(() => this.presentToast('Table created', 2000))
       .catch(error => this.presentToast('Error creating table'+ error, 2000));
   }
 
   insertUsuario(nombre: string, 
-                apellido: string, 
-                usuario: string, 
-                password: string, 
-                selectedOption: string, 
-                selectedDate: any) {
-    const dateString = JSON.stringify(selectedDate);
-    return this.db.executeSql(`INSERT INTO usuarios (nombre, 
-                                                     apellido, 
-                                                     usuario, 
-                                                     password, 
-                                                     nivel_de_estudios, 
-                                                     fecha_de_nacimiento) 
-                                                     VALUES(?, ?, ?, ?, ?, ?);`,
-    [nombre, apellido, usuario, password, selectedOption, dateString])
+                apellido: string,
+                usuario: string,
+                password: string,
+                selectedOption: string) {
+    
+    return this.db.executeSql(`INSERT INTO usuarios (nombre, apellido, usuario, password, nivel_de_estudios) VALUES(?, ?, ?, ?, ?);`,
+    [nombre, apellido, usuario, password, selectedOption])
     .then(() => this.presentToast('Usuario insertado correctamente'))
     .catch(error => this.presentToast('Error al insertar usuario:'+ error))
   } 
@@ -91,9 +84,9 @@ export class DbService {
     return this.isDBReady.asObservable();
   }
 
-  getUsuario(usuario:string, password:string){
+  /*getUsuario(usuario:string, password:string){
     this.db.executeSql(`SELECT * FROM usuarios WHERE uruario = ? AND password = ?;`, [usuario, password]);
-  }
+  }*/
 
   // Método para borrar los datos de la tabla "usuarios"
   clearUsuarios() {
