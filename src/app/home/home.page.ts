@@ -46,6 +46,7 @@ export class HomePage {
     this.selectedDate = localStorage.getItem("selectedDate");
 
     this.usuarioRecibidoPersistente = localStorage.getItem("usuarioRecibidoPersistente");
+    
   }
 
   async presentAlert(message: string) {
